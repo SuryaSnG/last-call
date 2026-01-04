@@ -6,7 +6,8 @@ COPY pom.xml ./pom.xml
 COPY shared-dtos ./shared-dtos
 COPY gateway-service ./gateway-service
 
-RUN mvn clean package -DskipTests -pl gateway-service -am
+RUN mvn clean install -DskipTests -f shared-dtos/pom.xml && \
+    mvn clean package -DskipTests -f gateway-service/pom.xml
 
 FROM eclipse-temurin:17-jdk-jammy
 
