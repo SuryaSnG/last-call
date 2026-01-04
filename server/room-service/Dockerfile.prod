@@ -6,7 +6,7 @@ COPY pom.xml ./pom.xml
 COPY shared-dtos ./shared-dtos
 COPY room-service ./room-service
 
-RUN mvn install:install-file -Dfile=pom.xml -DgroupId=com.last.call -DartifactId=backend -Dversion=0.0.1-SNAPSHOT -Dpackaging=pom && \
+RUN mvn install:install-file -Dfile=pom.xml -DpomFile=pom.xml && \
     mvn clean install -DskipTests -f shared-dtos/pom.xml && \
     mvn clean package -DskipTests -f room-service/pom.xml
 
