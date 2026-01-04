@@ -1,9 +1,8 @@
 FROM maven:3.9-eclipse-temurin-17 AS build
 
 WORKDIR /build
-RUN echo pwd
-RUN echo ls -la
 
+COPY pom.xml ./pom.xml
 COPY shared-dtos ./shared-dtos
 COPY gateway-service ./gateway-service
 
