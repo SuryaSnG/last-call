@@ -6,7 +6,8 @@ COPY pom.xml ./pom.xml
 COPY shared-dtos ./shared-dtos
 COPY room-service ./room-service
 
-RUN mvn clean install -DskipTests -f shared-dtos/pom.xml && \
+RUN mvn install:install-file -Dfile=pom.xml -DgroupId=com.last.call -DartifactId=backend -Dversion=0.0.1-SNAPSHOT -Dpackaging=pom && \
+    mvn clean install -DskipTests -f shared-dtos/pom.xml && \
     mvn clean package -DskipTests -f room-service/pom.xml
 
 FROM eclipse-temurin:17-jdk-jammy
