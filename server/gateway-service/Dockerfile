@@ -3,7 +3,7 @@ FROM maven:3.9-eclipse-temurin-17 AS build
 
 WORKDIR /build
 
-# Copy parent POM
+# Copy parent POM from build context root
 COPY pom.xml ./pom.xml
 
 # Copy gateway-service source
