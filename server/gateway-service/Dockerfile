@@ -4,10 +4,10 @@ FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /build
 
 # Copy parent POM
-COPY ../pom.xml ./pom.xml
+COPY pom.xml ./pom.xml
 
 # Copy gateway-service source
-COPY . ./gateway-service
+COPY gateway-service ./gateway-service
 
 # Build only gateway-service + dependencies
 RUN mvn clean package -DskipTests -pl gateway-service -am
