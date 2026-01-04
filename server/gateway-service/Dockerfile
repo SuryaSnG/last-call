@@ -7,7 +7,8 @@ WORKDIR /build
 COPY ../pom.xml ./pom.xml
 
 # Copy gateway-service source
-COPY gateway-service ./gateway-service
+RUN ls -la
+COPY . .
 
 # Build only gateway-service + dependencies
 RUN mvn clean package -DskipTests -pl gateway-service -am
