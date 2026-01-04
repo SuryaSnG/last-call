@@ -2,16 +2,23 @@
 FROM maven:3.9-eclipse-temurin-17 AS build
 
 WORKDIR /build
-COPY pom.xml .
-COPY src ./src
 
-RUN mvn clean package -DskipTests
+# Copy parent POM
+COPY ../pom.xml ./pom.xml
+
+# Copy gateway-service source
+COPY . ./gateway-service
+
+# Build only gateway-service + dependencies
+RUN mvn clean package -DskipTests -pl gateway-service -am
 
 # ---------- Runtime stage ----------
 FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
-COPY --from=build /build/target/gateway-service-*.jar app.jar
+
+# Copy only the JAR we need
+COPY --from=build /build/gateway-service/target/gateway-service-*.jar app.jar
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=$PORT"]
