@@ -4,7 +4,6 @@ mvnw
 mvnw.cmd
 
 # Source code (only need compiled JAR)
-src/
 target/classes/
 target/generated-sources/
 target/generated-test-sources/
