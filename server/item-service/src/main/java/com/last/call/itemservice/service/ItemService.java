@@ -1,6 +1,6 @@
 package com.last.call.itemservice.service;
 
-import com.last.call.itemservice.client.KafkaClient;
+import com.last.call.itemservice.client.RabbitMqClient;
 import com.last.call.itemservice.dto.CategoryWithCountDto;
 import com.last.call.itemservice.dto.ItemSearchRequestDto;
 import com.last.call.itemservice.dto.ItemWithSubscriptionDto;
@@ -29,7 +29,7 @@ public class ItemService {
     private ItemValidationService itemValidationService;
 
     @Autowired
-    private KafkaClient schedulerServiceClient;
+    private RabbitMqClient schedulerServiceClient;
 
     public Item getItemById(Long id) {
         return itemRepository.findById(id).orElseThrow(() -> new ItemNotFoundException("Item not found with id: " + id));

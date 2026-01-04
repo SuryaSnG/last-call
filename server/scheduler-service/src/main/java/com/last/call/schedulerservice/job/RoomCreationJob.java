@@ -6,8 +6,8 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.ApplicationContext;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -21,7 +21,7 @@ public class RoomCreationJob implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
         try {
             ApplicationContext applicationContext = (ApplicationContext) context.getScheduler().getContext().get("applicationContext");
-            KafkaTemplate<String, Object> kafkaTemplate = applicationContext.getBean(KafkaTemplate.class);
+            RabbitTemplate rabbitTemplate = applicationContext.getBean(RabbitTemplate.class);
 
             Long itemId = context.getJobDetail().getJobDataMap().getLong("itemId");
             Double startingPrice = context.getJobDetail().getJobDataMap().getDouble("startingPrice");
@@ -30,12 +30,11 @@ public class RoomCreationJob implements Job {
 
             System.out.println("🏠 Creating room for item ID: " + itemId + ")");
 
-            // Send complete item data for room creation
             ItemRoomCreationDto itemRoomCreationDto = new ItemRoomCreationDto(
                 itemId, startingPrice, null, auctionStartDate
             );
 
-            kafkaTemplate.send("room-creation-with-item", itemId.toString(), itemRoomCreationDto);
+            rabbitTemplate.convertAndSend("room-creation-with-item", itemRoomCreationDto);
 
             System.out.println("✅ Room creation request with data sent for item ID: " + itemId);
         } catch (Exception e) {

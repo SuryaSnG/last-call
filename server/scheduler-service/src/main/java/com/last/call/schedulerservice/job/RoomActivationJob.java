@@ -1,14 +1,11 @@
 package com.last.call.schedulerservice.job;
 
-import com.last.call.shared.dto.ItemRoomCreationDto;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.ApplicationContext;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-
-import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,13 +17,13 @@ public class RoomActivationJob implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
         try {
             ApplicationContext applicationContext = (ApplicationContext) context.getScheduler().getContext().get("applicationContext");
-            KafkaTemplate<String, Object> kafkaTemplate = applicationContext.getBean(KafkaTemplate.class);
+            RabbitTemplate rabbitTemplate = applicationContext.getBean(RabbitTemplate.class);
 
             Long itemId = context.getJobDetail().getJobDataMap().getLong("itemId");
 
             System.out.println("🏠 Activating room for item ID: " + itemId + ")");
 
-            kafkaTemplate.send("room-activation", itemId.toString(), itemId);
+            rabbitTemplate.convertAndSend("room-activation", itemId);
 
             System.out.println("✅ Room activation request with data sent for item ID: " + itemId);
         } catch (Exception e) {

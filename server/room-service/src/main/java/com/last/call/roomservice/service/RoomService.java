@@ -1,6 +1,6 @@
 package com.last.call.roomservice.service;
 
-import com.last.call.roomservice.client.KafkaClient;
+import com.last.call.roomservice.client.RabbitMqClient;
 import com.last.call.roomservice.dto.BidUpdateMessage;
 import com.last.call.roomservice.entity.Bid;
 import com.last.call.roomservice.entity.Room;
@@ -25,9 +25,9 @@ public class RoomService {
     private final BidRepository bidRepository;
     private final BidService bidservice;
     private final SimpMessagingTemplate messagingTemplate;
-    private final KafkaClient kafkaClient;
+    private final RabbitMqClient kafkaClient;
     
-    public RoomService(RoomRepository roomRepository, BidRepository bidRepository, BidService bidservice, SimpMessagingTemplate messagingTemplate, KafkaClient kafkaClient) {
+    public RoomService(RoomRepository roomRepository, BidRepository bidRepository, BidService bidservice, SimpMessagingTemplate messagingTemplate, RabbitMqClient kafkaClient) {
         this.roomRepository = roomRepository;
         this.bidRepository = bidRepository;
         this.bidservice = bidservice;
