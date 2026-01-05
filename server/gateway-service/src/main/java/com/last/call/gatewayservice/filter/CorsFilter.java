@@ -24,7 +24,8 @@ public class CorsFilter implements WebFilter {
         
         HttpHeaders headers = exchange.getResponse().getHeaders();
         
-        headers.add("Access-Control-Allow-Origin", "http://localhost:3000");
+        headers.add("Access-Control-Allow-Origin", "https://last-call-ashy.vercel.app");
+//        headers.add("Access-Control-Allow-Origin", "http://localhost:3000");
         headers.add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         headers.add("Access-Control-Allow-Headers", "Authorization, Content-Type");
         headers.add("Access-Control-Allow-Credentials", "true");
