@@ -26,160 +26,162 @@ public class DataSeeder {
             System.out.println("📦 Seeding item data...");
 
             long now = System.currentTimeMillis();
+            long dayMs = 24 * 60 * 60 * 1000L;
+            long hourMs = 60 * 60 * 1000L;
 
             // CAR items - Tony (1L), Uncle (2L), Peter (3L)
             Item car1 = new Item("Ferrari 488", "Red sports car in excellent condition",
                     1L, 50000, ItemCategory.CAR,
-                    new Date(now + 60 * 1000), new Date(now + 2 * 60 * 1000));
+                    new Date(now + dayMs), new Date(now + dayMs + 2 * hourMs));
             Item car2 = new Item("BMW M3", "High-performance sedan",
                     2L, 35000, ItemCategory.CAR,
-                    new Date(now + 3 * 60 * 1000), new Date(now + 4 * 60 * 1000));
+                    new Date(now + 2 * dayMs), new Date(now + 2 * dayMs + 2 * hourMs));
             Item car3 = new Item("Tesla Model S", "Electric luxury sedan",
                     3L, 40000, ItemCategory.CAR,
-                    new Date(now + 5 * 60 * 1000), new Date(now + 6 * 60 * 1000));
+                    new Date(now + 3 * dayMs), new Date(now + 3 * dayMs + 2 * hourMs));
 
             // JEWELRY items - Bruce (4L), Clark (5L), Diana (6L)
             Item jew1 = new Item("Diamond Ring", "2-carat diamond engagement ring",
                     4L, 8000, ItemCategory.JEWELRY,
-                    new Date(now + 7 * 60 * 1000), new Date(now + 8 * 60 * 1000));
+                    new Date(now + 4 * dayMs), new Date(now + 4 * dayMs + 2 * hourMs));
             Item jew2 = new Item("Gold Necklace", "18k gold chain necklace",
                     5L, 1500, ItemCategory.JEWELRY,
-                    new Date(now + 9 * 60 * 1000), new Date(now + 10 * 60 * 1000));
+                    new Date(now + 5 * dayMs), new Date(now + 5 * dayMs + 2 * hourMs));
             Item jew3 = new Item("Pearl Earrings", "Cultured pearl drop earrings",
                     6L, 800, ItemCategory.JEWELRY,
-                    new Date(now + 11 * 60 * 1000), new Date(now + 12 * 60 * 1000));
+                    new Date(now + 6 * dayMs), new Date(now + 6 * dayMs + 2 * hourMs));
 
             // ELECTRONICS items - Tony (1L), Uncle (2L), Peter (3L)
             Item elec1 = new Item("iPhone 15", "Latest Apple smartphone",
                     1L, 500, ItemCategory.ELECTRONICS,
-                    new Date(now + 13 * 60 * 1000), new Date(now + 14 * 60 * 1000));
+                    new Date(now + 7 * dayMs), new Date(now + 7 * dayMs + 2 * hourMs));
             Item elec2 = new Item("MacBook Pro", "High-performance laptop",
                     2L, 1500, ItemCategory.ELECTRONICS,
-                    new Date(now + 15 * 60 * 1000), new Date(now + 16 * 60 * 1000));
+                    new Date(now + 8 * dayMs), new Date(now + 8 * dayMs + 2 * hourMs));
             Item elec3 = new Item("Sony Headphones", "Noise-cancelling headphones",
                     3L, 200, ItemCategory.ELECTRONICS,
-                    new Date(now + 17 * 60 * 1000), new Date(now + 18 * 60 * 1000));
+                    new Date(now + 9 * dayMs), new Date(now + 9 * dayMs + 2 * hourMs));
 
             // ART items - Bruce (4L), Clark (5L), Diana (6L)
             Item art1 = new Item("Mona Lisa", "Famous painting by Leonardo da Vinci",
                     4L, 1000, ItemCategory.ART,
-                    new Date(now + 19 * 60 * 1000), new Date(now + 20 * 60 * 1000));
+                    new Date(now + 10 * dayMs), new Date(now + 10 * dayMs + 2 * hourMs));
             Item art2 = new Item("Starry Night", "Van Gogh masterpiece",
                     5L, 800, ItemCategory.ART,
-                    new Date(now + 21 * 60 * 1000), new Date(now + 22 * 60 * 1000));
+                    new Date(now + 11 * dayMs), new Date(now + 11 * dayMs + 2 * hourMs));
             Item art3 = new Item("The Scream", "Edvard Munch painting",
                     6L, 1200, ItemCategory.ART,
-                    new Date(now + 23 * 60 * 1000), new Date(now + 24 * 60 * 1000));
+                    new Date(now + 12 * dayMs), new Date(now + 12 * dayMs + 2 * hourMs));
 
             // MOTORCYCLE items - Tony (1L), Uncle (2L), Peter (3L)
             Item moto1 = new Item("Harley Davidson", "Classic cruiser motorcycle",
                     1L, 15000, ItemCategory.MOTORCYCLE,
-                    new Date(now + 25 * 60 * 1000), new Date(now + 26 * 60 * 1000));
+                    new Date(now + 13 * dayMs), new Date(now + 13 * dayMs + 2 * hourMs));
             Item moto2 = new Item("Yamaha R1", "Sport bike in mint condition",
                     2L, 12000, ItemCategory.MOTORCYCLE,
-                    new Date(now + 27 * 60 * 1000), new Date(now + 28 * 60 * 1000));
+                    new Date(now + 14 * dayMs), new Date(now + 14 * dayMs + 2 * hourMs));
             Item moto3 = new Item("BMW GS", "Adventure touring motorcycle",
                     3L, 18000, ItemCategory.MOTORCYCLE,
-                    new Date(now + 29 * 60 * 1000), new Date(now + 30 * 60 * 1000));
+                    new Date(now + 15 * dayMs), new Date(now + 15 * dayMs + 2 * hourMs));
 
             // COLLECTIBLES items - Bruce (4L), Clark (5L), Diana (6L)
             Item coll1 = new Item("Baseball Card", "Mickey Mantle rookie card",
                     4L, 3000, ItemCategory.COLLECTIBLES,
-                    new Date(now + 31 * 60 * 1000), new Date(now + 32 * 60 * 1000));
+                    new Date(now + 16 * dayMs), new Date(now + 16 * dayMs + 2 * hourMs));
             Item coll2 = new Item("Comic Book", "First edition Superman",
                     5L, 5000, ItemCategory.COLLECTIBLES,
-                    new Date(now + 33 * 60 * 1000), new Date(now + 34 * 60 * 1000));
+                    new Date(now + 17 * dayMs), new Date(now + 17 * dayMs + 2 * hourMs));
             Item coll3 = new Item("Vintage Toy", "Original Star Wars figure",
                     6L, 800, ItemCategory.COLLECTIBLES,
-                    new Date(now + 35 * 60 * 1000), new Date(now + 36 * 60 * 1000));
+                    new Date(now + 18 * dayMs), new Date(now + 18 * dayMs + 2 * hourMs));
 
             // HOUSE items - Tony (1L), Uncle (2L), Peter (3L)
             Item house1 = new Item("Victorian House", "Historic 4-bedroom home",
                     1L, 250000, ItemCategory.HOUSE,
-                    new Date(now + 37 * 60 * 1000), new Date(now + 38 * 60 * 1000));
+                    new Date(now + 19 * dayMs), new Date(now + 19 * dayMs + 2 * hourMs));
             Item house2 = new Item("Modern Villa", "Contemporary 5-bedroom villa",
                     2L, 400000, ItemCategory.HOUSE,
-                    new Date(now + 39 * 60 * 1000), new Date(now + 40 * 60 * 1000));
+                    new Date(now + 20 * dayMs), new Date(now + 20 * dayMs + 2 * hourMs));
             Item house3 = new Item("Beach House", "Oceanfront property",
                     3L, 600000, ItemCategory.HOUSE,
-                    new Date(now + 41 * 60 * 1000), new Date(now + 42 * 60 * 1000));
+                    new Date(now + 21 * dayMs), new Date(now + 21 * dayMs + 2 * hourMs));
 
             // APARTMENT items - Bruce (4L), Clark (5L), Diana (6L)
             Item apt1 = new Item("City Loft", "Downtown 2-bedroom loft",
                     4L, 150000, ItemCategory.APARTMENT,
-                    new Date(now + 43 * 60 * 1000), new Date(now + 44 * 60 * 1000));
+                    new Date(now + 22 * dayMs), new Date(now + 22 * dayMs + 2 * hourMs));
             Item apt2 = new Item("Penthouse", "Luxury penthouse suite",
                     5L, 300000, ItemCategory.APARTMENT,
-                    new Date(now + 45 * 60 * 1000), new Date(now + 46 * 60 * 1000));
+                    new Date(now + 23 * dayMs), new Date(now + 23 * dayMs + 2 * hourMs));
             Item apt3 = new Item("Studio Apartment", "Cozy downtown studio",
                     6L, 80000, ItemCategory.APARTMENT,
-                    new Date(now + 47 * 60 * 1000), new Date(now + 48 * 60 * 1000));
+                    new Date(now + 24 * dayMs), new Date(now + 24 * dayMs + 2 * hourMs));
 
             // PLOT items - Tony (1L), Uncle (2L), Peter (3L)
             Item plot1 = new Item("Commercial Plot", "Prime commercial land",
                     1L, 100000, ItemCategory.PLOT,
-                    new Date(now + 49 * 60 * 1000), new Date(now + 50 * 60 * 1000));
+                    new Date(now + 25 * dayMs), new Date(now + 25 * dayMs + 2 * hourMs));
             Item plot2 = new Item("Residential Plot", "Suburban building lot",
                     2L, 50000, ItemCategory.PLOT,
-                    new Date(now + 51 * 60 * 1000), new Date(now + 52 * 60 * 1000));
+                    new Date(now + 26 * dayMs), new Date(now + 26 * dayMs + 2 * hourMs));
             Item plot3 = new Item("Farm Land", "Agricultural property",
                     3L, 75000, ItemCategory.PLOT,
-                    new Date(now + 53 * 60 * 1000), new Date(now + 54 * 60 * 1000));
+                    new Date(now + 27 * dayMs), new Date(now + 27 * dayMs + 2 * hourMs));
 
             // ANTIQUES items - Bruce (4L), Clark (5L), Diana (6L)
             Item ant1 = new Item("Antique Clock", "18th century grandfather clock",
                     4L, 2500, ItemCategory.ANTIQUES,
-                    new Date(now + 55 * 60 * 1000), new Date(now + 56 * 60 * 1000));
+                    new Date(now + 28 * dayMs), new Date(now + 28 * dayMs + 2 * hourMs));
             Item ant2 = new Item("Victorian Chair", "Ornate wooden armchair",
                     5L, 1200, ItemCategory.ANTIQUES,
-                    new Date(now + 57 * 60 * 1000), new Date(now + 58 * 60 * 1000));
+                    new Date(now + 29 * dayMs), new Date(now + 29 * dayMs + 2 * hourMs));
             Item ant3 = new Item("Antique Vase", "Ming dynasty porcelain",
                     6L, 4000, ItemCategory.ANTIQUES,
-                    new Date(now + 59 * 60 * 1000), new Date(now + 60 * 60 * 1000));
+                    new Date(now + 30 * dayMs), new Date(now + 30 * dayMs + 2 * hourMs));
 
             // BOOKS items - Tony (1L), Uncle (2L), Peter (3L)
             Item book1 = new Item("First Edition", "Rare Hemingway novel",
                     1L, 500, ItemCategory.BOOKS,
-                    new Date(now + 61 * 60 * 1000), new Date(now + 62 * 60 * 1000));
+                    new Date(now + 31 * dayMs), new Date(now + 31 * dayMs + 2 * hourMs));
             Item book2 = new Item("Signed Copy", "Autographed Stephen King book",
                     2L, 300, ItemCategory.BOOKS,
-                    new Date(now + 63 * 60 * 1000), new Date(now + 64 * 60 * 1000));
+                    new Date(now + 32 * dayMs), new Date(now + 32 * dayMs + 2 * hourMs));
             Item book3 = new Item("Ancient Manuscript", "Medieval illuminated text",
                     3L, 8000, ItemCategory.BOOKS,
-                    new Date(now + 65 * 60 * 1000), new Date(now + 66 * 60 * 1000));
+                    new Date(now + 33 * dayMs), new Date(now + 33 * dayMs + 2 * hourMs));
 
             // SPORTS items - Bruce (4L), Clark (5L), Diana (6L)
             Item sport1 = new Item("Signed Baseball", "Babe Ruth autographed ball",
                     4L, 2000, ItemCategory.SPORTS,
-                    new Date(now + 67 * 60 * 1000), new Date(now + 68 * 60 * 1000));
+                    new Date(now + 34 * dayMs), new Date(now + 34 * dayMs + 2 * hourMs));
             Item sport2 = new Item("Golf Clubs", "Professional titanium set",
                     5L, 800, ItemCategory.SPORTS,
-                    new Date(now + 69 * 60 * 1000), new Date(now + 70 * 60 * 1000));
+                    new Date(now + 35 * dayMs), new Date(now + 35 * dayMs + 2 * hourMs));
             Item sport3 = new Item("Racing Bike", "Carbon fiber road bike",
                     6L, 3000, ItemCategory.SPORTS,
-                    new Date(now + 71 * 60 * 1000), new Date(now + 72 * 60 * 1000));
+                    new Date(now + 36 * dayMs), new Date(now + 36 * dayMs + 2 * hourMs));
 
             // FASHION items - Tony (1L), Uncle (2L), Peter (3L)
             Item fash1 = new Item("Designer Dress", "Vintage Chanel gown",
                     1L, 1500, ItemCategory.FASHION,
-                    new Date(now + 73 * 60 * 1000), new Date(now + 74 * 60 * 1000));
+                    new Date(now + 37 * dayMs), new Date(now + 37 * dayMs + 2 * hourMs));
             Item fash2 = new Item("Luxury Handbag", "Limited edition Hermès bag",
                     2L, 5000, ItemCategory.FASHION,
-                    new Date(now + 75 * 60 * 1000), new Date(now + 76 * 60 * 1000));
+                    new Date(now + 38 * dayMs), new Date(now + 38 * dayMs + 2 * hourMs));
             Item fash3 = new Item("Designer Shoes", "Christian Louboutin heels",
                     3L, 800, ItemCategory.FASHION,
-                    new Date(now + 77 * 60 * 1000), new Date(now + 78 * 60 * 1000));
+                    new Date(now + 39 * dayMs), new Date(now + 39 * dayMs + 2 * hourMs));
 
             // OTHER items - Bruce (4L), Clark (5L), Diana (6L)
             Item other1 = new Item("Mystery Box", "Unopened vintage collection",
                     4L, 100, ItemCategory.OTHER,
-                    new Date(now + 79 * 60 * 1000), new Date(now + 80 * 60 * 1000));
+                    new Date(now + 40 * dayMs), new Date(now + 40 * dayMs + 2 * hourMs));
             Item other2 = new Item("Rare Mineral", "Geological specimen",
                     5L, 600, ItemCategory.OTHER,
-                    new Date(now + 81 * 60 * 1000), new Date(now + 82 * 60 * 1000));
+                    new Date(now + 41 * dayMs), new Date(now + 41 * dayMs + 2 * hourMs));
             Item other3 = new Item("Vintage Camera", "Classic film camera",
                     6L, 400, ItemCategory.OTHER,
-                    new Date(now + 83 * 60 * 1000), new Date(now + 84 * 60 * 1000));
+                    new Date(now + 42 * dayMs), new Date(now + 42 * dayMs + 2 * hourMs));
 
             itemService.saveItem(car1);
             itemService.saveItem(car2);
