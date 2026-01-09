@@ -26,6 +26,7 @@ public class DataSeeder {
             System.out.println("📦 Seeding item data...");
 
             long now = System.currentTimeMillis();
+            long dayMs = 24 * 60 * 60 * 1000L;
             long halfDayMs = 12 * 60 * 60 * 1000L;
             long hourMs = 60 * 60 * 1000L;
 
