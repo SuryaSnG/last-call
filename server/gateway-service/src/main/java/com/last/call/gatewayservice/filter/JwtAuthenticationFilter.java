@@ -18,7 +18,7 @@ public class JwtAuthenticationFilter implements WebFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
     private static final Set<String> PUBLIC_PATHS = Set.of(
-        "/user/register", "/user/login", "/item/categories", "/room/live-auctions", "/room/auction-of-the-day"
+        "/user/register", "/user/login", "/item/categories", "/room/live-auctions", "/room/auction-of-the-day", "/health"
     );
     private static final Set<String> PERMITTED_PATHS = Set.of(
             "/item/last-call-to-register", "/item/search", "/item/search-with-filters"
