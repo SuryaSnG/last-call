@@ -2,7 +2,7 @@ name: Ping Health Checks
 
 on:
   schedule:
-    - cron: "*/12 * * * *"   # every 12 mins
+    - cron: "*/2 * * * *"   # every 12 mins
 
 jobs:
   ping:
